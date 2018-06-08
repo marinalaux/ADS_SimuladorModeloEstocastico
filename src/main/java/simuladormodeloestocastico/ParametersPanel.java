@@ -12,31 +12,33 @@ public class ParametersPanel extends JPanel {
     
     /**
      * Construtor
+     * 
+     * @param dev
      */
-    public ParametersPanel() {
+    public ParametersPanel(Developer dev) {
         
         super(new GridLayout(8, 1));
         setBorder(BorderFactory.createTitledBorder("Parâmetros para simulação"));
         
-        ProbsTextField umPonto = new ProbsTextField("Probabilidade 1 ponto", (probs) -> {
+        ProbsTextField umPonto = new ProbsTextField(dev.getProbabilidadePontos().get("1"), "Probabilidade 1 ponto", (probs) -> {
             System.out.println("probs 1 ponto: " + probs);
         });
-        ProbsTextField doisPontos = new ProbsTextField("Probabilidade 2 pontos", (probs) -> {
+        ProbsTextField doisPontos = new ProbsTextField(dev.getProbabilidadePontos().get("2"), "Probabilidade 2 pontos", (probs) -> {
             
         });
-        ProbsTextField tresPontos = new ProbsTextField("Probabilidade 3 pontos", (probs) -> {
+        ProbsTextField tresPontos = new ProbsTextField(dev.getProbabilidadePontos().get("3"), "Probabilidade 3 pontos", (probs) -> {
             
         });
-        ProbsTextField cincoPontos = new ProbsTextField("Probabilidade 5 pontos", (probs) -> {
+        ProbsTextField cincoPontos = new ProbsTextField(dev.getProbabilidadePontos().get("5"), "Probabilidade 5 pontos", (probs) -> {
             
         });
-        ProbsTextField oitoPontos = new ProbsTextField("Probabilidade 8 pontos", (probs) -> {
+        ProbsTextField oitoPontos = new ProbsTextField(dev.getProbabilidadePontos().get("8"), "Probabilidade 8 pontos", (probs) -> {
             
         });
-        ProbsTextField trezePontos = new ProbsTextField("Probabilidade 13 pontos", (probs) -> {
+        ProbsTextField trezePontos = new ProbsTextField(dev.getProbabilidadePontos().get("13"), "Probabilidade 13 pontos", (probs) -> {
             
         });
-        ProbsTextField vinteUmPontos = new ProbsTextField("Probabilidade 21 pontos", (probs) -> {
+        ProbsTextField vinteUmPontos = new ProbsTextField(dev.getProbabilidadePontos().get("21"), "Probabilidade 21 pontos", (probs) -> {
             
         });
         

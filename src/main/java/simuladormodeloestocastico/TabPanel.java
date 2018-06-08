@@ -10,11 +10,13 @@ public class TabPanel extends JPanel {
     
     /**
      * Construtor
+     * 
+     * @param dev
      */
-    public TabPanel() {
+    public TabPanel(Developer dev) {
         super(new BorderLayout());
         
-        ParametersPanel params = new ParametersPanel();
+        ParametersPanel params = new ParametersPanel(dev);
         HistogramPanel histogram = new HistogramPanel();
         
         add(histogram, BorderLayout.CENTER);

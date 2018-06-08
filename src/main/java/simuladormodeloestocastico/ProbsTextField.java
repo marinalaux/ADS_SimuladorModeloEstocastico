@@ -12,17 +12,29 @@ import javax.swing.JTextField;
  */
 public class ProbsTextField extends JPanel {
     
-    public ProbsTextField(String label, Consumer<Double> callback) {
+    /**
+     * Construtor
+     * 
+     * @param probDefault
+     * @param label
+     * @param callback 
+     */
+    public ProbsTextField(Double probDefault, String label, Consumer<Double> callback) {
         super();
         JTextField textField = new JTextField();
         textField.setColumns(5);
+        textField.setText(String.valueOf(probDefault));
         textField.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {}
 
             @Override
             public void focusLost(FocusEvent e) {
-                callback.accept(Double.parseDouble(textField.getText()));
+                if (textField.getText().isEmpty()) {
+                    callback.accept(0.0);
+                } else {
+                    callback.accept(Double.parseDouble(textField.getText()));
+                }
             }
         });
         JLabel labelField = new JLabel(label);

@@ -1,17 +1,14 @@
 package simuladormodeloestocastico;
 
-import java.awt.BorderLayout;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import org.apache.commons.math3.distribution.AbstractRealDistribution;
-import org.apache.commons.math3.distribution.EnumeratedIntegerDistribution;
-import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.NormalDistribution;
-import org.apache.commons.math3.random.JDKRandomGenerator;
-import org.apache.commons.math3.random.RandomGenerator;
 
 /**
  * Simulador de modelo estocástico - Teoria de filas
@@ -70,14 +67,14 @@ public class SimuladorModeloEstocastico extends JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        TabPanel tab177 = new TabPanel();
-        TabPanel tab187 = new TabPanel();
-        TabPanel tab231 = new TabPanel();
+        
+        java.lang.reflect.Type listType = new TypeToken<ArrayList<Developer>>(){}.getType();
+        List<Developer> dev = new GsonBuilder().create().fromJson(new InputStreamReader(SimuladorModeloEstocastico.class.getResourceAsStream("/dados.json")), listType);
         
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.add("Desenvolvedor #177", tab177);
-        tabbedPane.add("Desenvolvedor #187", tab187);
-        tabbedPane.add("Desenvolvedor #231", tab231);
+        for (Developer developer : dev) {
+            tabbedPane.add("Desenvolvedor #" + developer.getNome(), new TabPanel(developer));
+        }
 
         getContentPane().add(tabbedPane);
         
