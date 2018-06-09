@@ -1,5 +1,6 @@
 package br.feevale.ads.simuladorestocastico.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,6 +17,10 @@ public class Developer {
      */
     private Map<String, Double> probabilidadePontos;
 
+    public Developer() {
+        probabilidadePontos = new HashMap<>();
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -25,7 +30,7 @@ public class Developer {
     }
 
     public Map<String, Double> getProbabilidadePontos() {
-        return probabilidadePontos;
+        return new HashMap<>(probabilidadePontos);
     }
 
     public void setProbabilidadePontos(Map<String, Double> probabilidadePontos) {

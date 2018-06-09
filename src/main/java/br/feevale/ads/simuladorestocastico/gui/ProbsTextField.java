@@ -16,6 +16,10 @@ public class ProbsTextField extends JPanel {
      * Campo texto
      */
     private JTextField textField;
+    /**
+     * Valor default
+     */
+    private final Double originalValue;
     
     /**
      * Construtor
@@ -26,6 +30,7 @@ public class ProbsTextField extends JPanel {
      */
     public ProbsTextField(Double probDefault, String label, Consumer<Double> callback) {
         super();
+        originalValue = probDefault;
         textField = new JTextField();
         textField.setColumns(5);
         textField.setText(String.valueOf(probDefault));
@@ -48,4 +53,11 @@ public class ProbsTextField extends JPanel {
         add(textField);
     }
 
+    /**
+     * Reseta o valor original do campo
+     */
+    void resetValue() {
+        textField.setText(String.valueOf(originalValue));
+    }
+    
 }
