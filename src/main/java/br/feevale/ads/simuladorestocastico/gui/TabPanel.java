@@ -17,7 +17,11 @@ public class TabPanel extends JPanel {
     public TabPanel(Developer dev) {
         super(new BorderLayout());
         
-        ParametersPanel params = new ParametersPanel(dev);
+        ParametersPanel params = new ParametersPanel(dev, (simular) -> {
+            if (simular) {
+                System.out.println("Cliquei em simular do DEV " + dev.getNome() + "!");
+            }
+        });
         HistogramPanel histogram = new HistogramPanel();
         
         add(histogram, BorderLayout.CENTER);

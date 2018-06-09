@@ -31,5 +31,9 @@ public class Developer {
     public void setProbabilidadePontos(Map<String, Double> probabilidadePontos) {
         this.probabilidadePontos = probabilidadePontos;
     }
+    
+    public void changeProbabilidade(String key, Double value) {
+        this.probabilidadePontos.put(key, value);
+    }
 
 }

@@ -13,6 +13,11 @@ import javax.swing.JTextField;
 public class ProbsTextField extends JPanel {
 
     /**
+     * Campo texto
+     */
+    private JTextField textField;
+    
+    /**
      * Construtor
      *
      * @param probDefault
@@ -21,7 +26,7 @@ public class ProbsTextField extends JPanel {
      */
     public ProbsTextField(Double probDefault, String label, Consumer<Double> callback) {
         super();
-        JTextField textField = new JTextField();
+        textField = new JTextField();
         textField.setColumns(5);
         textField.setText(String.valueOf(probDefault));
         textField.addFocusListener(new FocusListener() {

@@ -1,14 +1,8 @@
 package br.feevale.ads.simuladorestocastico.gui;
 
+import javafx.embed.swing.JFXPanel;
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  * Painel do historama
@@ -16,12 +10,24 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class HistogramPanel extends JPanel {
 
     /**
+     * Painel JavaFX
+     */
+    private JFXPanel fxPanel;
+    
+    /**
      * Construtor
      */
     public HistogramPanel() {
         super();
         setBorder(BorderFactory.createTitledBorder("Histograma"));
-        add(new JLabel("Histograma"));
+        JFXPanel fxPanel = new JFXPanel();
     }
 
+    /**
+     * Atualiza histograma
+     */
+    public void updateHistogram() {
+        
+    }
+    
 }
