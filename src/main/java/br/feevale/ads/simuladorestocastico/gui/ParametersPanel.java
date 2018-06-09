@@ -1,5 +1,6 @@
-package simuladormodeloestocastico;
+package br.feevale.ads.simuladorestocastico.gui;
 
+import br.feevale.ads.simuladorestocastico.model.Developer;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;

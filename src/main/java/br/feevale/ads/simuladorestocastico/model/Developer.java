@@ -1,4 +1,4 @@
-package simuladormodeloestocastico;
+package br.feevale.ads.simuladorestocastico.model;
 
 import java.util.Map;
 
@@ -7,9 +7,13 @@ import java.util.Map;
  */
 public class Developer {
 
-    /** Nome do desenvolvedor */
+    /**
+     * Nome do desenvolvedor
+     */
     private String nome;
-    /** Probabilidades das pontuações */
+    /**
+     * Probabilidades das pontuações
+     */
     private Map<String, Double> probabilidadePontos;
 
     public String getNome() {
@@ -27,5 +31,5 @@ public class Developer {
     public void setProbabilidadePontos(Map<String, Double> probabilidadePontos) {
         this.probabilidadePontos = probabilidadePontos;
     }
-    
+
 }

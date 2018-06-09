@@ -1,4 +1,4 @@
-package simuladormodeloestocastico;
+package br.feevale.ads.simuladorestocastico.gui;
 
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -11,13 +11,13 @@ import javax.swing.JTextField;
  * Campo texto com legenda
  */
 public class ProbsTextField extends JPanel {
-    
+
     /**
      * Construtor
-     * 
+     *
      * @param probDefault
      * @param label
-     * @param callback 
+     * @param callback
      */
     public ProbsTextField(Double probDefault, String label, Consumer<Double> callback) {
         super();
@@ -26,7 +26,8 @@ public class ProbsTextField extends JPanel {
         textField.setText(String.valueOf(probDefault));
         textField.addFocusListener(new FocusListener() {
             @Override
-            public void focusGained(FocusEvent e) {}
+            public void focusGained(FocusEvent e) {
+            }
 
             @Override
             public void focusLost(FocusEvent e) {
@@ -41,5 +42,5 @@ public class ProbsTextField extends JPanel {
         add(labelField);
         add(textField);
     }
-    
+
 }
