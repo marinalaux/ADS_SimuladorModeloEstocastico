@@ -19,6 +19,7 @@ public class TabPanel extends JPanel {
         
         ParametersPanel params = new ParametersPanel(dev, () -> {
             System.out.println("Cliquei em simular do DEV " + dev.getNome() + "!");
+            dev.simulate();
         });
         HistogramPanel histogram = new HistogramPanel();
         

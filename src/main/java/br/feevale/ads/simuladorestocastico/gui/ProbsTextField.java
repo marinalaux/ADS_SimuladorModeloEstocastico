@@ -41,6 +41,7 @@ public class ProbsTextField extends JPanel {
 
             @Override
             public void focusLost(FocusEvent e) {
+                System.out.println("Focus Lost");
                 if (textField.getText().isEmpty()) {
                     callback.accept(0.0);
                 } else {

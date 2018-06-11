@@ -3,6 +3,7 @@ package br.feevale.ads.simuladorestocastico.gui;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -21,7 +22,7 @@ public class ParametersPanel extends JPanel {
      */
     public ParametersPanel(Developer dev, Runnable callbackSimular) {
         
-        super(new GridLayout(9, 1));
+        super(new GridLayout(10, 1));
         setBorder(BorderFactory.createTitledBorder("Parâmetros para simulação"));
         
         // Cria cópia dos dados de probabilidades de pontos do desenvolvedor
@@ -49,6 +50,10 @@ public class ParametersPanel extends JPanel {
         ProbsTextField vinteUmPontos = new ProbsTextField(dev.getProbabilidadePontos().get("21"), "Probabilidade 21 pontos", (probs) -> {
             dev.changeProbabilidade("21", probs);
         });
+        QuantityTextField quantityTextField = new QuantityTextField(10, "Quantidade de tarefas a simular", (quantity) -> {
+            dev.changeQuantityTasks(quantity);
+        });
+        dev.setQuantityTaks(10);
         
         JButton recarregar = new JButton("Recarregar parâmetros");
         recarregar.addActionListener((ActionEvent e) -> {
@@ -73,8 +78,7 @@ public class ParametersPanel extends JPanel {
         add(oitoPontos);
         add(trezePontos);
         add(vinteUmPontos);
+        add(quantityTextField);
         add(simular);
-        
     }
-    
 }
