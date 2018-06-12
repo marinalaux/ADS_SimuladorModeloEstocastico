@@ -16,32 +16,20 @@ import org.apache.commons.math3.distribution.NormalDistribution;
  */
 public class SimulatorUtil {
 
-    public static int getDistribuitionPointsByPorcentage(int[] numsToGenerate, double[] discreteProbabilities) {
-        EnumeratedIntegerDistribution distribution = new EnumeratedIntegerDistribution(numsToGenerate, discreteProbabilities);
-        return distribution.sample();
-    }
-
-    public static long getValueToExponentialDistribution(double mean) {
-        ExponentialDistribution exp = new ExponentialDistribution(mean);
-        return getSampleValue(exp);
-    }
-
-    public static long getValueToNormalDistribution(double mean, double dp) {
-        NormalDistribution normal = new NormalDistribution(/*rand */2.90, 1.40);
-        return getSampleValue(normal);
-    }
-
     private static long getSampleValue(AbstractRealDistribution dist) {
         return Math.round(dist.sample());
     }
 
-    public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks) {
+    public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks, double mean) {
         List<Task> tasks = new ArrayList<Task>();
+        EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(numsToGenerate, discreteProbabilities);
+        ExponentialDistribution exp = new ExponentialDistribution(mean);
         for (int i = 0; i < quantityTaks; i++) {
-            int points = getDistribuitionPointsByPorcentage(numsToGenerate, discreteProbabilities);
+            int points  = dist.sample();
+            double time = getSampleValue(exp);
             Task task = new Task();
             task.setPoints(points);
-            //TODO: GERAR TEMPO;
+            task.setTime(time);            
             tasks.add(task);
         }
         return tasks;

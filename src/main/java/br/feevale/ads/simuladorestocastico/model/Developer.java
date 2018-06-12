@@ -20,7 +20,11 @@ public class Developer {
      * Probabilidades das pontuações
      */
     private Map<String, Double> probabilidadePontos;
-
+    /**
+     * Média de pontos
+     */
+    private double media;    
+    
     private int quantityTaks;
     private List<Task> tasks;
 
@@ -44,6 +48,14 @@ public class Developer {
 
     public void setProbabilidadePontos(Map<String, Double> probabilidadePontos) {
         this.probabilidadePontos = probabilidadePontos;
+    }
+
+    public double getMedia() {
+        return media;
+    }
+
+    public void setMedia(double media) {
+        this.media = media;
     }
 
     public void changeQuantityTasks(int newQuantity) {
@@ -82,9 +94,9 @@ public class Developer {
         System.out.println("Simulando...");
         int[] numsToGenerate = getNumsToGenerate();
         double[] discreteProbabilities = getDiscreteProbabilities();
-        this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities, this.quantityTaks);
+        this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities, this.quantityTaks, this.media);
         for (Task task : this.tasks) { // TODO: Remover sysout
-            System.out.println("Pontos....: " + task.getPoints());
+            System.out.println("Pontos....: " + task.getPoints() + " -> Tempo....:" + task.getTime()); 
         }
     }
 
