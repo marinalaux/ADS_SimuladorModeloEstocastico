@@ -13,10 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Projeto....: SimuladorModeloEstocastico Criado em..: 11/06/2018, 01:26:18
- * Arquivo....: QuantityTextField.java
- *
- * @author Pablo Oliveira (jntpablo)
+ * Quantidade de tarefas a simular
  */
 public class QuantityTextField extends JPanel {
 
@@ -32,7 +29,7 @@ public class QuantityTextField extends JPanel {
     /**
      * Construtor
      *
-     * @param probDefault
+     * @param qtdDefault
      * @param label
      * @param callback
      */
@@ -49,7 +46,6 @@ public class QuantityTextField extends JPanel {
 
             @Override
             public void focusLost(FocusEvent e) {
-                System.out.println("Focus Lost");
                 if (textField.getText().isEmpty()) {
                     callback.accept(0);
                 } else {

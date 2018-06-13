@@ -17,7 +17,7 @@ public class SimulatorUtil {
     }
 
     public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks, double mean) {
-        List<Task> tasks = new ArrayList<Task>();
+        List<Task> tasks = new ArrayList<>();
         EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(numsToGenerate, discreteProbabilities);
         ExponentialDistribution exp = new ExponentialDistribution(mean);
         for (int i = 0; i < quantityTaks; i++) {
