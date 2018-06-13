@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.application.Platform;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
@@ -19,6 +20,7 @@ public class SimuladorModeloEstocastico extends JFrame {
     private List<Developer> developers;
 
     public SimuladorModeloEstocastico() {
+        Platform.setImplicitExit(false);
         InitializeGUI();
         loadDevsFromJson();
         addDevelopersIntoScreen();

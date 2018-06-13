@@ -6,13 +6,9 @@ import java.util.List;
 import org.apache.commons.math3.distribution.AbstractRealDistribution;
 import org.apache.commons.math3.distribution.EnumeratedIntegerDistribution;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.NormalDistribution;
 
 /**
- * Projeto....: SimuladorModeloEstocastico Criado em..: 11/06/2018, 00:39:56
- * Arquivo....: SimulatorUtil.java
- *
- * @author Pablo Oliveira (jntpablo)
+ * Utilitários do simulador
  */
 public class SimulatorUtil {
 

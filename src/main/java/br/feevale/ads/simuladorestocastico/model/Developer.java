@@ -24,13 +24,18 @@ public class Developer {
      * Média de pontos
      */
     private double media;    
-    
+    /**
+     * Quantidade de tarefas
+     */
     private int quantityTaks;
+    /**
+     * Lista de tarefas
+     */
     private List<Task> tasks;
 
     public Developer() {
         this.probabilidadePontos = new HashMap<>();
-        this.tasks = new ArrayList<Task>();
+        this.tasks = new ArrayList<>();
         this.quantityTaks = 0;
     }
 
