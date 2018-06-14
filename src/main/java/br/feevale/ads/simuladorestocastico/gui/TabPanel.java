@@ -3,7 +3,6 @@ package br.feevale.ads.simuladorestocastico.gui;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 /**
  * Painel da aba

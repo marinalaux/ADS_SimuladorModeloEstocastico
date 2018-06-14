@@ -8,6 +8,7 @@ import br.feevale.ads.simuladorestocastico.gui.SimuladorModeloEstocastico;
  * Arquivo....: App.java
  *
  * @author Pablo Oliveira (jntpablo)
+ * Aplicativo para simulação
  */
 public class App {
     public static void main(String[] args) {

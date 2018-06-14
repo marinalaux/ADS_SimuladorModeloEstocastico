@@ -1,6 +1,5 @@
 package br.feevale.ads.simuladorestocastico.gui;
 
-import br.feevale.ads.simuladorestocastico.gui.TabPanel;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -17,17 +16,20 @@ import javax.swing.UIManager;
  */
 public class SimuladorModeloEstocastico extends JFrame {
 
+    /**
+     * Desenvolvedores da simulação
+     */
     private List<Developer> developers;
 
     public SimuladorModeloEstocastico() {
         Platform.setImplicitExit(false);
-        InitializeGUI();
+        initializeGui();
         loadDevsFromJson();
         addDevelopersIntoScreen();
         setVisible(Boolean.TRUE);
     }
 
-    private void InitializeGUI() {
+    private void initializeGui() {
         try {
             setTitle("Simulador de Modelo Estocástico - Teoria de filas");
             setDefaultCloseOperation(EXIT_ON_CLOSE);

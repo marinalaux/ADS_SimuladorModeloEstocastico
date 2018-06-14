@@ -1,18 +1,20 @@
 package br.feevale.ads.simuladorestocastico.model;
 
 /** 
- * Projeto....: SimuladorModeloEstocastico
- * Criado em..: 10/06/2018, 23:25:05 
- * Arquivo....: Task.java
- *
- * @author Pablo Oliveira (jntpablo)
+ * Tarefa
  */
 public class Task {
+    
+    /**
+     * Pontos da tarefa
+     */
     private Integer points;
+    /**
+     * Tempo investido na produção da tarefa
+     */
     private double time;
 
-    public Task() {
-    }
+    public Task() {}
 
     public Task(Integer points, double time) {
         this.points = points;

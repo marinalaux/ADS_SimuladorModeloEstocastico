@@ -3,7 +3,6 @@ package br.feevale.ads.simuladorestocastico.gui;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
