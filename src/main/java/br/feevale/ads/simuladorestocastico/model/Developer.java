@@ -23,7 +23,7 @@ public class Developer {
     /**
      * Média de pontos
      */
-    private double media;    
+    private float media;    
     /**
      * Quantidade de tarefas
      */
@@ -32,6 +32,8 @@ public class Developer {
      * Lista de tarefas
      */
     private List<Task> tasks;
+    
+    private Estatisticas estatisticas;
 
     public Developer() {
         this.probabilidadePontos = new HashMap<>();
@@ -55,11 +57,11 @@ public class Developer {
         this.probabilidadePontos = probabilidadePontos;
     }
 
-    public double getMedia() {
+    public float getMedia() {
         return media;
     }
 
-    public void setMedia(double media) {
+    public void setMedia(float media) {
         this.media = media;
     }
 
@@ -100,6 +102,7 @@ public class Developer {
         int[] numsToGenerate = getNumsToGenerate();
         double[] discreteProbabilities = getDiscreteProbabilities();
         this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities, this.quantityTaks, this.media);
+        this.estatisticas = new Estatisticas(this.tasks);
         for (Task task : this.tasks) { // TODO: Remover sysout
             System.out.println("Pontos....: " + task.getPoints() + " -> Tempo....:" + task.getTime()); 
         }
