@@ -77,7 +77,7 @@ public class Estatisticas {
     }
 
     private void generateNumberOfClasses() {
-        Double amplitude = Math.sqrt(this.amplitude);
+        Double amplitude = Math.sqrt(this.tasks.size());
         this.numberOfClasses = (int) Math.ceil(amplitude);
     }
 
