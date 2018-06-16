@@ -55,6 +55,10 @@ public class Estatisticas {
         this.amplitude = amplitude;
     }
 
+    public List<Interval> getIntervals() {
+        return intervals;
+    }
+    
     private void generateExtremes() {
         this.minimum = tasks.get(0);
         this.maximum = tasks.get(0);
@@ -98,7 +102,6 @@ public class Estatisticas {
             for (Interval interval : intervals) {
                 if (isBetweenInterval(task, interval)) {
                     interval.addQuantity();
-                    continue;
                 }
             }
         }

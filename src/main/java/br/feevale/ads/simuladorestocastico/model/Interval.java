@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.feevale.ads.simuladorestocastico.model;
 
 /** 
- * Projeto....: SimuladorModeloEstocastico
- * Criado em..: 13/06/2018, 21:08:45 
- * Arquivo....: Interval.java
- *
- * @author Pablo Oliveira (jntpablo)
+ * Intervalo de frequências
  */
 public class Interval {
     

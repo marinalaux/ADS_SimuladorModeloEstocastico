@@ -21,7 +21,8 @@ public class TabPanel extends JPanel {
         ParametersPanel params = new ParametersPanel(dev, () -> {
             System.out.println("Cliquei em simular do DEV " + dev.getNome() + "!");
             dev.simulate();
-            histogram.updateHistogram();
+            histogram.updateHistogram(dev.getEstatisticas());
+            histogram.updateMedia(dev);
         });
         
         add(histogram, BorderLayout.CENTER);

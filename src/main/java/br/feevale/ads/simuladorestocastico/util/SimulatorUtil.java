@@ -16,17 +16,23 @@ public class SimulatorUtil {
         return Math.round(dist.sample());
     }
 
-    public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks, double mean) {
+    public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks,
+            double mean, float minimo, float maximo) {
         List<Task> tasks = new ArrayList<>();
         EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(numsToGenerate, discreteProbabilities);
         ExponentialDistribution exp = new ExponentialDistribution(mean);
-        for (int i = 0; i < quantityTaks; i++) {
-            int points  = dist.sample();
+        int qtd = 0;
+        while (qtd < quantityTaks) {
+            int points = dist.sample();
             double time = getSampleValue(exp);
+            if (time == 0 || time < minimo || time > maximo) {
+                continue;
+            }
             Task task = new Task();
             task.setPoints(points);
-            task.setTime(time);            
+            task.setTime(time);
             tasks.add(task);
+            qtd++;
         }
         return tasks;
     }

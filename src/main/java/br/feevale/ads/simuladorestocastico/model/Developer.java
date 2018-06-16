@@ -23,7 +23,15 @@ public class Developer {
     /**
      * Média de pontos
      */
-    private float media;    
+    private float media;
+    /**
+     * Valor mínimo para tempo de produção
+     */
+    private float minimo;
+    /**
+     * Valor máximo para tempo de produção
+     */
+    private float maximo;
     /**
      * Quantidade de tarefas
      */
@@ -65,6 +73,10 @@ public class Developer {
         this.media = media;
     }
 
+    public Estatisticas getEstatisticas() {
+        return estatisticas;
+    }
+    
     public void changeQuantityTasks(int newQuantity) {
         this.quantityTaks = newQuantity;
     }
@@ -101,7 +113,8 @@ public class Developer {
         System.out.println("Simulando...");
         int[] numsToGenerate = getNumsToGenerate();
         double[] discreteProbabilities = getDiscreteProbabilities();
-        this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities, this.quantityTaks, this.media);
+        this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities,
+                this.quantityTaks, this.media, this.minimo, this.maximo);
         this.estatisticas = new Estatisticas(this.tasks);
         for (Task task : this.tasks) { // TODO: Remover sysout
             System.out.println("Pontos....: " + task.getPoints() + " -> Tempo....:" + task.getTime()); 
