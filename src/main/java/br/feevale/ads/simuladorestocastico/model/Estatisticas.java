@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.feevale.ads.simuladorestocastico.model;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Projeto....: SimuladorModeloEstocastico 
- * Criado em..: 13/06/2018, 20:46:45
- * Arquivo....: Estatisticas.java
- *
- * @author Pablo Oliveira (jntpablo)
+ * Estatísticas
  */
 public class Estatisticas {
 
@@ -88,8 +78,8 @@ public class Estatisticas {
     }
 
     private void generateIntervalSize() {
-        BigDecimal intervalSize = new BigDecimal(this.amplitude / this.numberOfClasses);
-        this.intervalSize = intervalSize.setScale(2).doubleValue();
+        BigDecimal intervalSizeBigDecimal = new BigDecimal(this.amplitude / this.numberOfClasses);
+        this.intervalSize = intervalSizeBigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
     private void generateExtremesIntervals() {
