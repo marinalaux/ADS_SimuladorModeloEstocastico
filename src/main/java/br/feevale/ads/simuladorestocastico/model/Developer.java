@@ -110,15 +110,15 @@ public class Developer {
     }
 
     public void simulate() {
-        System.out.println("Simulando...");
+//        System.out.println("Simulando...");
         int[] numsToGenerate = getNumsToGenerate();
         double[] discreteProbabilities = getDiscreteProbabilities();
         this.tasks = SimulatorUtil.generateRandomTasks(numsToGenerate, discreteProbabilities,
                 this.quantityTaks, this.media, this.minimo, this.maximo);
         this.estatisticas = new Estatisticas(this.tasks);
-        for (Task task : this.tasks) { // TODO: Remover sysout
-            System.out.println("Pontos....: " + task.getPoints() + " -> Tempo....:" + task.getTime()); 
-        }
+//        for (Task task : this.tasks) { // TODO: Remover sysout
+//            System.out.println("Pontos....: " + task.getPoints() + " -> Tempo....:" + task.getTime()); 
+//        }
     }
 
     private int[] getNumsToGenerate() {
@@ -147,5 +147,14 @@ public class Developer {
         a = Arrays.copyOf(a, a.length + 1);
         a[a.length - 1] = e;
         return a;
+    }
+    
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (String prob : probabilidadePontos.keySet()) {
+            sb.append(prob + " = " + probabilidadePontos.get(prob));
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

@@ -54,7 +54,7 @@ public class HistogramPanel extends JPanel {
     public void updateHistogram(Estatisticas estatisticas) {
         Platform.runLater(() -> {
             BorderPane root = new BorderPane();
-            Scene scene = new Scene(root, 1200, 800);
+            Scene scene = new Scene(root, 800, 500);
             BarChart<String,Number> chart = new BarChart<>(new CategoryAxis(), new NumberAxis());
             chart.setVerticalGridLinesVisible(false);
             chart.setLegendVisible(false);

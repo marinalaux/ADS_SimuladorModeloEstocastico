@@ -1,6 +1,9 @@
 package br.feevale.ads.simuladorestocastico.util;
 
 import br.feevale.ads.simuladorestocastico.model.Task;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.math3.distribution.AbstractRealDistribution;
@@ -35,6 +38,12 @@ public class SimulatorUtil {
             qtd++;
         }
         return tasks;
+    }
+
+    public static void copyToClipboard(String value) {
+        StringSelection stringSelection = new StringSelection(value);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
     }
 
 }
