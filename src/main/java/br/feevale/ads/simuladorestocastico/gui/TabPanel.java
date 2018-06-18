@@ -26,6 +26,8 @@ public class TabPanel extends JPanel {
                 media += dev.getTimeAverage();
                 histogram.updateHistogram(dev.getEstatisticas());
                 histogram.updateMedia(dev);
+                
+                System.out.println("Media: " + dev.getTimeAverage());
             }
             media = media / 10;
             SimulatorUtil.copyToClipboard(dev.toString() + "\n" + "Media da media: " + media);
