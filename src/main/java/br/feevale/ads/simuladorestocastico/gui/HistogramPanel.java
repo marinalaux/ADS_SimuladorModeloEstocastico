@@ -3,7 +3,6 @@ package br.feevale.ads.simuladorestocastico.gui;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import br.feevale.ads.simuladorestocastico.model.Estatisticas;
 import br.feevale.ads.simuladorestocastico.model.Interval;
-import br.feevale.ads.simuladorestocastico.model.Task;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
@@ -13,12 +12,13 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.BorderPane;
 import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 /**
- * Painel do historama
+ * Painel do histograma
  */
 public class HistogramPanel extends JPanel {
 
@@ -40,6 +40,8 @@ public class HistogramPanel extends JPanel {
         fxPanel = new JFXPanel();
         add(fxPanel);
         media = new JTextField();
+        media.setEnabled(false);
+        add(new JLabel("Média"));
         add(media);
     }
 
@@ -58,7 +60,7 @@ public class HistogramPanel extends JPanel {
             XYChart.Series serie = new XYChart.Series();
             
             for (Interval interval : estatisticas.getIntervals()) {
-                serie.getData().add(new XYChart.Data(String.valueOf(interval.getEndValue()), interval.getQuantityValues()));
+                serie.getData().add(new XYChart.Data(String.valueOf("Até " + interval.getEndValue()), interval.getQuantityValues()));
             }
             
             chart.getData().add(serie);
