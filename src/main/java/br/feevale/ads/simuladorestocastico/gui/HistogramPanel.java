@@ -3,6 +3,7 @@ package br.feevale.ads.simuladorestocastico.gui;
 import br.feevale.ads.simuladorestocastico.model.Developer;
 import br.feevale.ads.simuladorestocastico.model.Estatisticas;
 import br.feevale.ads.simuladorestocastico.model.Interval;
+import java.text.DecimalFormat;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
@@ -59,8 +60,10 @@ public class HistogramPanel extends JPanel {
             chart.setLegendVisible(false);
             XYChart.Series serie = new XYChart.Series();
             
+            DecimalFormat format = new DecimalFormat("#,##0.00");
             for (Interval interval : estatisticas.getIntervals()) {
-                serie.getData().add(new XYChart.Data(String.valueOf("Até " + interval.getEndValue()), interval.getQuantityValues()));
+                
+                serie.getData().add(new XYChart.Data(String.valueOf("Até " + format.format(interval.getEndValue())), interval.getQuantityValues()));
             }
             
             chart.getData().add(serie);

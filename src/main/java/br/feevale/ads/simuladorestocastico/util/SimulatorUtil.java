@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.commons.math3.distribution.AbstractRealDistribution;
 import org.apache.commons.math3.distribution.EnumeratedIntegerDistribution;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.random.JDKRandomGenerator;
 
 /**
  * Utilitários do simulador
@@ -20,8 +19,8 @@ public class SimulatorUtil {
     public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks,
             double mean, int minimo, int maximo) {
         List<Task> tasks = new ArrayList<>();
-        EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(new JDKRandomGenerator(1), numsToGenerate, discreteProbabilities);
-        ExponentialDistribution exp = new ExponentialDistribution(new JDKRandomGenerator(minimo), mean);
+        EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(numsToGenerate, discreteProbabilities);
+        ExponentialDistribution exp = new ExponentialDistribution(mean);
         int qtd = 0;
         while (qtd < quantityTaks) {
             int points = dist.sample();
