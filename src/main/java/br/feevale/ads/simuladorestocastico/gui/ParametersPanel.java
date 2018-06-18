@@ -49,10 +49,9 @@ public class ParametersPanel extends JPanel {
         ProbsTextField vinteUmPontos = new ProbsTextField(dev.getProbabilidadePontos().get("21"), "Probabilidade 21 pontos", (probs) -> {
             dev.changeProbabilidade("21", probs);
         });
-        QuantityTextField quantityTextField = new QuantityTextField(10, "Quantidade de tarefas a simular", (quantity) -> {
+        QuantityTextField quantityTextField = new QuantityTextField(dev.getQuantityTaks(), "Quantidade de tarefas a simular", (quantity) -> {
             dev.changeQuantityTasks(quantity);
         });
-        dev.setQuantityTaks(10);
         
         JButton recarregar = new JButton("Recarregar parâmetros");
         recarregar.addActionListener((ActionEvent e) -> {
