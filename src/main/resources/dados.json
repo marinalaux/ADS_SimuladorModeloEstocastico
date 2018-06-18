@@ -12,8 +12,8 @@
         },
         "quantityTaks": 44,
 	"media": 207.41,
-        "minimo": 19.00,
-        "maximo": 1035.00
+        "minimo": 19,
+        "maximo": 1035
     },
     {
         "nome": "187",
@@ -28,8 +28,8 @@
         },
         "quantityTaks": 74,
 	"media": 295.57,
-        "minimo": 14.00,
-        "maximo": 1579.00
+        "minimo": 14,
+        "maximo": 1579
     },
     {
         "nome": "231",
@@ -44,7 +44,7 @@
         },
         "quantityTaks": 53,
 	"media": 202.28,
-        "minimo": 9.00,
-        "maximo": 742.00
+        "minimo": 9,
+        "maximo": 742
     }
 ]

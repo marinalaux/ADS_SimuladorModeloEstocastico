@@ -27,11 +27,11 @@ public class Developer {
     /**
      * Valor mínimo para tempo de produção
      */
-    private float minimo;
+    private int minimo;
     /**
      * Valor máximo para tempo de produção
      */
-    private float maximo;
+    private int maximo;
     /**
      * Quantidade de tarefas
      */

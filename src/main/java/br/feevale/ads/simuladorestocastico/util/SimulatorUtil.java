@@ -18,11 +18,10 @@ public class SimulatorUtil {
     }
 
     public static List<Task> generateRandomTasks(int[] numsToGenerate, double[] discreteProbabilities, int quantityTaks,
-            double mean, float minimo, float maximo) {
+            double mean, int minimo, int maximo) {
         List<Task> tasks = new ArrayList<>();
-        JDKRandomGenerator random = new JDKRandomGenerator(1);
-        EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(random, numsToGenerate, discreteProbabilities);
-        ExponentialDistribution exp = new ExponentialDistribution(random, mean);
+        EnumeratedIntegerDistribution dist = new EnumeratedIntegerDistribution(new JDKRandomGenerator(1), numsToGenerate, discreteProbabilities);
+        ExponentialDistribution exp = new ExponentialDistribution(new JDKRandomGenerator(minimo), mean);
         int qtd = 0;
         while (qtd < quantityTaks) {
             int points = dist.sample();
